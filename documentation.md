@@ -22,6 +22,6 @@ def conv_lett(mot):
 
 print(conv_lett("khouya"))
 ```
-*Résultat du print :* ```python كهoوyا```
+*Résultat du print :* ```كهoوyا```
 
 **Problème identifié** : les digrammes (`kh`, `gh`, `sh`, `ch`, `dh`) sont traités comme deux caractères séparés au lieu d'un seul son.
