@@ -1,11 +1,10 @@
 ## 27-03-2026 -- premiers jets de code
 
-Nous avons tout d'abord repéré les problèmes que pourraient poser certaines lettres au moment de la conversion.
-Un problème auquel j'ai bien pensé mais que je n'ai pas réussi à anticiper dans le code : les digrammes.
+Avant de commencer à coder, nous avons repéré les principaux problèmes que pourraient poser certaines lettres au moment de la conversion. Un problème auquel j'ai pensé mais que je n'ai pas réussi à anticiper dans le code : les digrammes.
 
-Nous avons écrit un premier script pour essayer de convertir les caractères, en omettant tous les problèmes linguistiques qui nous préoccuperont à des stades plus tardifs du projet. 
+Nous avons écrit un premier script pour essayer de convertir les caractères, en omettant les complexités linguistiques qui nous préoccuperont à des stades plus évolués du projet. 
 
-*Le code :*
+**Le code :**
 
 ## Version 1 — conversion lettre par lettre
 ```python
@@ -23,5 +22,6 @@ def conv_lett(mot):
 
 print(conv_lett("khouya"))
 ```
+*Résultat du print :* ```python كهoوyا```
 
 **Problème identifié** : les digrammes (`kh`, `gh`, `sh`, `ch`, `dh`) sont traités comme deux caractères séparés au lieu d'un seul son.
