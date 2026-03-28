@@ -50,7 +50,7 @@ def conv_lett(mot):
 
 print(conv_lett("khouya"))
 ```
-*Résultat du print :* ```خوyا```
+*Résultat du print :* ```خويا```
 
-Le "kh" a bien été converti en "خ" mais un autre problème persiste : le problème des voyelles qui peuvent varier en fonction de leur contexte d'occurrence.
-
+Le "kh" a bien été converti en "خ" et la transcription a bien été exécutée.
+Maintenant il faudrait régler le problème des emphatiques.
