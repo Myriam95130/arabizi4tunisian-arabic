@@ -28,7 +28,7 @@ print(conv_lett("khouya"))
 
 ## 28-03-2026 -- Résolution du problème des digrammes 
 
-Le problème des digrammes a été réglé en ramplaçant la boucle for par une boucle while :
+Le problème des digrammes a été réglé en ramplaçant la boucle for par une boucle while, afin de pouvoir lire 2 lettres à la fois :
 
 ```python
 dico_arabizi = {'a':'ا', 'b':'ب', 't': 'ت', 'j':'ج', '7':'ح', '5': 'خ', 'kh' :'خ', 'd':'د', 'dh':'ذ', 'r':'ر', 'z': 'ز', 's':'س', 'ch': 'ش', 'sh': 'ش', '3':'ع', '8':'غ', 'gh':'غ', 'f':'ف', '9':'ق', 'q':'ق', 'k':'ك', 'l':'ل', 'm':'م', 'n':'ن', 'h':'ه','ou':'و', 'u':'و', 'i':'ي', '2': 'ء'}
@@ -53,4 +53,4 @@ print(conv_lett("khouya"))
 *Résultat du print :* ```خويا```
 
 Le "kh" a bien été converti en "خ" et la transcription a bien été exécutée.
-Maintenant il faudrait régler le problème des emphatiques.
+Seulement, comment gérer le problème s'il s'agit d'un 'k' + un '7' retranscrit 'h' par l'utilisateur ?
