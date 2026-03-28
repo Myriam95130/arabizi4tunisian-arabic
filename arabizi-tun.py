@@ -3,12 +3,17 @@ dico_arabizi = {'a':'ا', 'b':'ب', 't': 'ت', 'j':'ج', '7':'ح', '5': 'خ', 'k
 
 def conv_lett(mot):
     mot_arabe = []
-    for ch in mot:
-        if ch in dico_arabizi.keys():
-            ch = dico_arabizi[ch]
-            mot_arabe.append(ch)
-        elif ch not in dico_arabizi:
-            mot_arabe.append(ch)
+    i = 0
+    while i < len(mot):
+        if mot[i:i+2] in dico_arabizi:
+            mot_arabe.append(dico_arabizi[mot[i:i+2]])
+            i += 2
+        elif mot[i] in dico_arabizi:
+            mot_arabe.append(dico_arabizi[mot[i]])
+            i += 1
+        else:
+            mot_arabe.append(mot[i])
+            i += 1 
     return ''.join(mot_arabe)
 
 print(conv_lett("khouya"))
