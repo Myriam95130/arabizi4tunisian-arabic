@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Dictionnaire d'arabe dialectal tunisien trilingue</title>
+        <respStmt>
+          <resp>Conception</resp>
+          <name>Myriam Ben Hadj Sghaïer</name>
+        </respStmt>
+      </titleStmt>
+
+      <publicationStmt>
+        <p>Dictionnaire dialectal (tunisien) du projet ROOTZ 2.0</p>
+      </publicationStmt>
+
+      <sourceDesc>
+        <p>Données lexicographiques originales</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+
+      <entry xml:id="manger">
+
+        <!-- Lemme français -->
+        <form type="lemma" xml:lang="fr">
+          <orth>manger</orth>
+          <gramGrp>
+            <pos>verbe</pos>
+          </gramGrp>
+        </form>
+
+        <!-- Lemme anglais -->
+        <form type="lemma" xml:lang="en">
+          <orth>to eat</orth>
+          <gramGrp>
+            <pos>verb</pos>
+          </gramGrp>
+        </form>
+
+        <!-- Lemme tunisien -->
+        <form type="lemma" xml:lang="aeb">
+          <orth>كلي</orth>
+          <gramGrp>
+            <pos>فعل</pos>
+          </gramGrp>
+        </form>
+
+        <!-- Formes fléchies (pronoms) : présent (tunisien, Sahel) -->
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>اني نكل</orth>
+          <gramGrp>
+            <pers>1</pers>
+            <number>sg</number>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>انتِ تكل</orth>
+          <gramGrp>
+            <pers>2</pers>
+            <number>sg</number>
+            <gen>m/f</gen>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>هو يكل</orth>
+          <gramGrp>
+            <pers>3</pers>
+            <number>sg</number>
+            <gen>m</gen>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>هي تكل</orth>
+          <gramGrp>
+            <pers>3</pers>
+            <number>sg</number>
+            <gen>f</gen>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>أحنا نكلو</orth>
+          <gramGrp>
+            <pers>1</pers>
+            <number>pl</number>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>إنتما تكلوا</orth>
+          <gramGrp>
+            <pers>2</pers>
+            <number>pl</number>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>هما يكلوا</orth>
+          <gramGrp>
+            <pers>3</pers>
+            <number>pl</number>
+          </gramGrp>
+        </form>
+
+        <!-- Sens -->
+
+        <sense n="1">
+          <def xml:lang="fr">S'alimenter, se nourrir.</def>
+          <def xml:lang="en">To consume food.</def>
+          <def xml:lang="aeb">تناول الطعام</def>
+
+          <cit type="example" xml:lang="aeb">
+            <quote>كلي عندي البارح</quote>
+          </cit>
+
+          <cit type="translation" xml:lang="fr">
+            <quote>Il a mangé chez moi hier.</quote>
+          </cit>
+
+          <cit type="translation" xml:lang="en">
+            <quote>He ate at my place yesterday.</quote>
+          </cit>
+        </sense>
+
+      </entry>
+
+      <entry xml:id="boire">
+
+        <!-- Lemme français -->
+        <form type="lemma" xml:lang="fr">
+          <orth>boire</orth>
+          <gramGrp>
+            <pos>verbe</pos>
+          </gramGrp>
+        </form>
+
+        <!-- Lemme anglais -->
+        <form type="lemma" xml:lang="en">
+          <orth>to drink</orth>
+          <gramGrp>
+            <pos>verb</pos>
+          </gramGrp>
+        </form>
+
+        <!-- Lemme tunisien -->
+        <form type="lemma" xml:lang="aeb">
+          <orth>شرب</orth>
+          <gramGrp>
+            <pos>فعل</pos>
+          </gramGrp>
+        </form>
+
+        <!-- Formes fléchies (pronoms) : présent (tunisien, Sahel) -->
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>اني نشرب</orth>
+          <gramGrp>
+            <pers>1</pers>
+            <number>sg</number>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>أنتِ تشرب</orth>
+          <gramGrp>
+            <pers>2</pers>
+            <number>sg</number>
+            <gen>m/f</gen>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>هو يشرب</orth>
+          <gramGrp>
+            <pers>3</pers>
+            <number>sg</number>
+            <gen>m</gen>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>هي تشرب</orth>
+          <gramGrp>
+            <pers>3</pers>
+            <number>sg</number>
+            <gen>f</gen>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>أحنا نشربو</orth>
+          <gramGrp>
+            <pers>1</pers>
+            <number>pl</number>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>إنتما تشربوا</orth>
+          <gramGrp>
+            <pers>2</pers>
+            <number>pl</number>
+          </gramGrp>
+        </form>
+
+        <form type="inflected" xml:lang="aeb">
+          <orth>هما يشربوا</orth>
+          <gramGrp>
+            <pers>3</pers>
+            <number>pl</number>
+          </gramGrp>
+        </form>
+
+        <!-- Sens -->
+
+        <sense n="1">
+          <def xml:lang="fr">Avaler (un liquide).</def>
+          <def xml:lang="en">Take (a liquid) into the mouth and swallow..</def>
+          <def xml:lang="aeb">تناول السائل عن طريق الفم</def>
+
+          <cit type="example" xml:lang="aeb">
+            <quote>شربت شوية مي  </quote>
+          </cit>
+
+          <cit type="translation" xml:lang="fr">
+            <quote>Elle a bu un peu d'eau.</quote>
+          </cit>
+
+          <cit type="translation" xml:lang="en">
+            <quote>She drank some water.</quote>
+          </cit>
+        </sense>
+
+      </entry>
+
+    </body>
+  </text>
+</TEI>
