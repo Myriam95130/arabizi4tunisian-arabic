@@ -65,3 +65,5 @@ De plus, le convertisseur ne distingue pas les voyelles longues des voyelles cou
 Autre problème, les lettres géminées : mm, pp, kk etc.
 
 Les emphatiques toujours. 
+
+Problème du schwa 'e'.
