@@ -1,8 +1,12 @@
-## ARABIZI FOR COLLOQUIAL ARABIC : THE TUNISIAN CASE
+## THE FELFEL LAB PROJECT FOR TUNISIAN ARABIC
+
+## ARABIZI FOR COLLOQUIAL ARABIC 
 
 In the early 2000s, most keyboards were based on the Latin script and were not adapted to North African Arabic dialects. Users adapted the Latin Alphabet to represent Arabic sounds, developing a phonetic writing system based on both letters and numbers to encode non-latin sounds such as uvular, emphatic and laryngeal consonants.
 
 ## About this project
+
+Felfel means pepper in Tunisian Arabic. Felfel is one of Tunisia's most iconic symbols, as Tunisians eat it with almost every meal. 🌶️🔥
 
 This project aims to provide solutions for complex cases in the Arabizi writing system, such as emphatic consonants, the hamza and the tāʾ marbūṭa.
 
