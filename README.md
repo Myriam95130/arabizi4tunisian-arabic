@@ -4,7 +4,7 @@ In the early 2000s, most keyboards were based on the Latin script and were not a
 
 ## About this project
 
-This project aims to provide solutions for complex cases in the Arabizi writing system, such as emphatic consonants, the hamza and the tāʾ marbūṭa.
+This project aims to provide solutions for complex cases in the Arabizi writing system, such as vowels, emphatic consonants, the hamza and the tāʾ marbūṭa.
 
 ## The case of emphatics 
 
