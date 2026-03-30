@@ -1,4 +1,4 @@
-from arabizitns import dico_arabizi
+from converter import dico_arabizi
 
 # Voyelles simples de l'arabizi tunisien (pas de distinction courte/longue)
 
