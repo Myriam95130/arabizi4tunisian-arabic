@@ -203,5 +203,103 @@ de surface uniquement** et non une représentation phonologique profonde.
       à l'Arabizi dialectal tunisien
 - [ ] Étiquetage morpho-syntaxique pour l'Arabizi tunisien
 
+## 04/04/2026 -- corrections sur syllabizer.py et converter.py
+
+## 1. `syllabizer.py` corrections 
+
+### Problèmes identifiés et corrigés
+
+**Bug 1 — ordre des conditions dans `phono_tns()`**
+La condition semi-consonne `mot[i] in ['y', 'i', 'w'] and i == 0` était placée après le test voyelle simple, donc jamais atteinte. Correction : remonter le bloc semi-consonne avant le test voyelle.
+
+**Bug 2 -- semi-consonnes `y`/`w`**
+`'i'` retiré de la liste des semi-consonnes, en arabizi `i` est toujours vocalique. La condition finale :
+```python
+elif mot_arabizi[i] in ['y', 'w'] and (i == 0 or structure[-1] == 'C'):
+    structure += "C"
+    i += 1
+```
+
+### Tests validés
+```
+khouya    → CVVV  ✓
+yesta3mel → CVCCVCCVC  ✓
+twensa    → CCVCCV  ✓
+```
+---
+
+## 2. `converter.py` -- corrections et nouvelles règles
+
+### Corrections apportées
+
+**Bug 1 : crash en fin de mot (géminées)**
+`mot[i] == mot[i+1]` plantait quand `i` était au dernier caractère. Correction :
+```python
+elif i+1 < len(mot) and mot[i] == mot[i+1]:
+```
+
+**Bug 2 — `last_CV` jamais remis à `False` après consonne**
+Sans reset, une voyelle transcrite bloquait toutes les voyelles suivantes même après une consonne. 
+Correction : ajouter `last_CV = False` dans le bloc consonne simple.
+
+**Bug 3 — `'w'` absent de `dico_arabizi`**
+`KeyError: 'w'` lors du traitement de mots comme `weld`. 
+Correction : ajouter `'w':'و'` dans le dictionnaire.
+
+### Nouvelle règle -- semi-consonnes `y`/`w`
+
+`y` et `w` retirés de la liste `voyelles`. Nouveau bloc dédié :
+
+```python
+elif mot[i] in ['y', 'w']:
+    if i+1 < len(mot):  # pas en fin de mot → consonne
+        if mot_arabe and mot_arabe[-1] in ['ا', 'و', 'ي']:
+            mot_arabe.pop()  # supprimer la voyelle courte précédente
+            last_CV = False
+        mot_arabe.append(dico_arabizi[mot[i]])
+        last_CV = False
+        i += 1
+    else:  # fin de mot → voyelle pure
+        mot_arabe.append(dico_arabizi[mot[i]])
+        last_CV = True
+        i += 1
+```
+
+**Principe** : `y`/`w` suivi d'une consonne ou en fin de mot = voyelle/diphtongue. 
+`y`/`w` pas en fin de mot = consonne, la voyelle courte précédente est supprimée (`pop()`).
+
+### Limites documentées
+
+**Diphtongues**
+Impossible de distinguer automatiquement `3ayla` (عايلة, voyelle longue + voyelle longue) de `3aychek` (عيشك, `ay` diphtongue) sans lexique. 
+
+**Tāʾ marbūṭa**
+Non gérée : impossible de distinguer un `a` final ordinaire (`marhba` = `مرحبا`) d'un `a` signalant une tāʾ marbūṭa (`3ayla` = `عايلة`) sans lexique.
+
+**Hamza**
+En arabe tunisien, la hamza (`2`) tombe souvent et s'assimile dans la voyelle environnante (ex : `3a2ila` = `3ayla`). 
+Le converter transcrit `2` → `ء` mais ne gère pas l'assimilation dialectale si jamais l'utilisateur venait à entrer le mot en arabe littéral.
+
+## 3. Lexique parallèle — création
+
+### Structure définie
+Création d'un fichier CSV `lexiquetns.csv` avec les colonnes :
+
+```
+arabizi | arabe_dialectal | phonétique_AL | arabe_littéral | scheme_vocalique | etiquette_morpho | francais | anglais |
+```
+
+### Motivation
+- Résoudre les ambiguïtés que les règles seules ne peuvent pas traiter (diphtongues, tāʾ marbūṭa, hamza)
+- Construire une ressource annotée pour le tunisien arabizi : inexistante à ce jour
+- Base pour un futur modèle de vocalisation automatique
+
+## 4. Pistes de recherche évoquées
+
+- **Transducteurs à états finis (FST)** --> approche plus formelle pour le converter.
+- **Reconnaissance de schèmes morphologiques** --> pour restituer la distinction voyelle courte/longue
+- **Vocalisation automatique** --> entraîner un modèle seq2seq sur des paires arabizi → arabe vocalisé
+- **Lexique comparatif arabe littéraire / tunisien dialectal** --> avec colonnes phonétique IPA, schème, catégorie, traductions
+
 ## Auteure
 Myriam Ben Hadj Sghaier — M1 TAL INALCO / Sorbonne Nouvelle / Paris Nanterre
